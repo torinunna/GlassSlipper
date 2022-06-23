@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		5F28134C2864C1CF00EF5A7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28134B2864C1CF00EF5A7F /* AppDelegate.swift */; };
 		5F28134E2864C1CF00EF5A7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28134D2864C1CF00EF5A7F /* SceneDelegate.swift */; };
-		5F2813502864C1CF00EF5A7F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28134F2864C1CF00EF5A7F /* ViewController.swift */; };
+		5F2813502864C1CF00EF5A7F /* GlassSlipperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F28134F2864C1CF00EF5A7F /* GlassSlipperViewController.swift */; };
 		5F2813532864C1CF00EF5A7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2813512864C1CF00EF5A7F /* Main.storyboard */; };
 		5F2813562864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F2813542864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld */; };
 		5F2813582864C1D200EF5A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2813572864C1D200EF5A7F /* Assets.xcassets */; };
@@ -20,7 +20,7 @@
 		5F2813482864C1CF00EF5A7F /* GlassSlipper(storyboard).app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "GlassSlipper(storyboard).app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F28134B2864C1CF00EF5A7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5F28134D2864C1CF00EF5A7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		5F28134F2864C1CF00EF5A7F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5F28134F2864C1CF00EF5A7F /* GlassSlipperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlassSlipperViewController.swift; sourceTree = "<group>"; };
 		5F2813522864C1CF00EF5A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		5F2813552864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GlassSlipper_storyboard_.xcdatamodel; sourceTree = "<group>"; };
 		5F2813572864C1D200EF5A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -60,7 +60,7 @@
 			children = (
 				5F28134B2864C1CF00EF5A7F /* AppDelegate.swift */,
 				5F28134D2864C1CF00EF5A7F /* SceneDelegate.swift */,
-				5F28134F2864C1CF00EF5A7F /* ViewController.swift */,
+				5F28134F2864C1CF00EF5A7F /* GlassSlipperViewController.swift */,
 				5F2813512864C1CF00EF5A7F /* Main.storyboard */,
 				5F2813572864C1D200EF5A7F /* Assets.xcassets */,
 				5F2813592864C1D200EF5A7F /* LaunchScreen.storyboard */,
@@ -141,7 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F2813502864C1CF00EF5A7F /* ViewController.swift in Sources */,
+				5F2813502864C1CF00EF5A7F /* GlassSlipperViewController.swift in Sources */,
 				5F2813562864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld in Sources */,
 				5F28134C2864C1CF00EF5A7F /* AppDelegate.swift in Sources */,
 				5F28134E2864C1CF00EF5A7F /* SceneDelegate.swift in Sources */,
