@@ -54,13 +54,10 @@ class GlassSlipperViewController: UITableViewController {
         
         cell.contentConfiguration = content
         
+//        Ternary operator ==>
+//        value = condition ? valueIfTrue : valueIfFalse
         
-        
-        if item.done == true {
-            cell.accessoryType = .checkmark
-        } else {
-            cell.accessoryType = .none
-        }
+        cell.accessoryType = item.done == true ? .checkmark : .none
         
         return cell
     }
