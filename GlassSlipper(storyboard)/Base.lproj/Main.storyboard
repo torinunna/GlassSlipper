@@ -30,7 +30,14 @@
                             <outlet property="delegate" destination="SJq-11-F9f" id="q1U-4i-5v9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="유리구두" id="bxO-pN-di4"/>
+                    <navigationItem key="navigationItem" title="유리구두" id="bxO-pN-di4">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="StK-1J-1WB">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="SJq-11-F9f" id="JSH-vy-SDh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0U-z4-OwJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
