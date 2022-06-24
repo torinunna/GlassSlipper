@@ -12,8 +12,14 @@ class GlassSlipperViewController: UITableViewController {
     
     var itemArray = ["지갑", "애플워치", "에어팟"]
     
+    let defaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if let items = defaults.array(forKey: "GlassSlipperArray") as? [String] {
+            itemArray = items
+        }
     }
     
     
@@ -63,6 +69,9 @@ class GlassSlipperViewController: UITableViewController {
 //            what will happen once the user clicks the Add Item button on UIAlert
             
             self.itemArray.append(textField.text!)
+            
+            self.defaults.set(self.itemArray, forKey: "GlassSlipperArray")
+            
             self.tableView.reloadData()
         }
         
