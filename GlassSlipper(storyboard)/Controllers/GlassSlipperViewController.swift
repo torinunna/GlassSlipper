@@ -8,7 +8,6 @@
 import UIKit
 
 class GlassSlipperViewController: UITableViewController {
-
     
     var itemArray = [Item]()
     
@@ -29,9 +28,9 @@ class GlassSlipperViewController: UITableViewController {
         newItem3.title = "애플워치"
         itemArray.append(newItem3)
         
-//        if let items = defaults.array(forKey: "GlassSlipperArray") as? [String] {
-//            itemArray = items
-//        }
+        if let items = defaults.array(forKey: "GlassSlipperArray") as? [Item] {
+            itemArray = items
+        }
         
     }
     
