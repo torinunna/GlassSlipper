@@ -31,6 +31,8 @@ class GlassSlipperViewController: UITableViewController {
         newItem3.title = "애플워치"
         itemArray.append(newItem3)
         
+        loadItems()
+        
         
     }
     
@@ -124,6 +126,17 @@ class GlassSlipperViewController: UITableViewController {
         
         self.tableView.reloadData()
         
+    }
+    
+    func loadItems() {
+        if let data = try? Data(contentsOf: dataFilePath!) {
+            let decoder = PropertyListDecoder()
+            do {
+            itemArray = try decoder.decode([Item].self, from: data)
+            } catch {
+                print("Error decoding itme array, \(error)")
+            }
+        }
     }
     
 }
