@@ -11,10 +11,13 @@ class GlassSlipperViewController: UITableViewController {
     
     var itemArray = [Item]()
     
-    let defaults = UserDefaults.standard
+    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+       
+        print(dataFilePath)
         
         let newItem = Item()
         newItem.title = "지갑"
@@ -28,9 +31,6 @@ class GlassSlipperViewController: UITableViewController {
         newItem3.title = "애플워치"
         itemArray.append(newItem3)
         
-        if let items = defaults.array(forKey: "GlassSlipperArray") as? [Item] {
-            itemArray = items
-        }
         
     }
     
@@ -68,7 +68,7 @@ class GlassSlipperViewController: UITableViewController {
         
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
-        tableView.reloadData()
+        saveItems()
         
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -90,9 +90,9 @@ class GlassSlipperViewController: UITableViewController {
             
             self.itemArray.append(newItem)
             
-            self.defaults.set(self.itemArray, forKey: "GlassSlipperArray")
+            self.saveItems()
             
-            self.tableView.reloadData()
+      
         }
         
         alert.addTextField { (alerttextField) in
@@ -104,6 +104,25 @@ class GlassSlipperViewController: UITableViewController {
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
+        
+    }
+    
+//    Mark - Model Manupulation Methods
+    
+    func saveItems() {
+        
+        let encoder = PropertyListEncoder()
+        
+        
+        do {
+            let data = try encoder.encode(itemArray)
+            try data.write(to: dataFilePath!)
+        } catch {
+            print("Error encoding item array, \(error)")
+        }
+       
+        
+        self.tableView.reloadData()
         
     }
     
