@@ -115,13 +115,13 @@ class GlassSlipperViewController: UITableViewController {
         
         let encoder = PropertyListEncoder()
         
-        
-        do {
-            let data = try encoder.encode(itemArray)
-            try data.write(to: dataFilePath!)
-        } catch {
-            print("Error encoding item array, \(error)")
-        }
+//
+//        do {
+//            let data = try encoder.encode(itemArray)
+//            try data.write(to: dataFilePath!)
+//        } catch {
+//            print("Error encoding item array, \(error)")
+//        }
        
         
         self.tableView.reloadData()
@@ -129,14 +129,14 @@ class GlassSlipperViewController: UITableViewController {
     }
     
     func loadItems() {
-        if let data = try? Data(contentsOf: dataFilePath!) {
-            let decoder = PropertyListDecoder()
-            do {
-            itemArray = try decoder.decode([Item].self, from: data)
-            } catch {
-                print("Error decoding itme array, \(error)")
-            }
-        }
+//        if let data = try? Data(contentsOf: dataFilePath!) {
+//            let decoder = PropertyListDecoder()
+//            do {
+//            itemArray = try decoder.decode([Item].self, from: data)
+//            } catch {
+//                print("Error decoding itme array, \(error)")
+//            }
+//        }
     }
     
 }

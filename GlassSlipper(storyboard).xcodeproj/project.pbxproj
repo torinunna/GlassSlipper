@@ -14,7 +14,6 @@
 		5F2813562864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F2813542864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld */; };
 		5F2813582864C1D200EF5A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2813572864C1D200EF5A7F /* Assets.xcassets */; };
 		5F28135B2864C1D200EF5A7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2813592864C1D200EF5A7F /* LaunchScreen.storyboard */; };
-		5F62655C2865ABEF00D23B24 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F62655B2865ABEF00D23B24 /* Item.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,7 +26,6 @@
 		5F2813572864C1D200EF5A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F28135A2864C1D200EF5A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F28135C2864C1D200EF5A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		5F62655B2865ABEF00D23B24 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +65,6 @@
 				5F62655E2865AC1300D23B24 /* Views */,
 				5F6265602865AC3800D23B24 /* Supporting Files */,
 				5F28135C2864C1D200EF5A7F /* Info.plist */,
-				5F2813542864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld */,
 			);
 			path = "GlassSlipper(storyboard)";
 			sourceTree = "<group>";
@@ -75,7 +72,7 @@
 		5F62655D2865ABFB00D23B24 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
-				5F62655B2865ABEF00D23B24 /* Item.swift */,
+				5F2813542864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld */,
 			);
 			path = "Data Model";
 			sourceTree = "<group>";
@@ -176,7 +173,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5F62655C2865ABEF00D23B24 /* Item.swift in Sources */,
 				5F2813502864C1CF00EF5A7F /* GlassSlipperViewController.swift in Sources */,
 				5F2813562864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld in Sources */,
 				5F28134C2864C1CF00EF5A7F /* AppDelegate.swift in Sources */,
