@@ -14,7 +14,6 @@ class GlassSlipperViewController: UITableViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
        
@@ -57,7 +56,14 @@ class GlassSlipperViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        //        remove the data from permanent stores
+        context.delete(itemArray[indexPath.row])
+        //        remove the current item from the itemArray
+        itemArray.remove(at: indexPath.row)
+
+        
+        
+//        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         saveItems()
         
@@ -75,8 +81,6 @@ class GlassSlipperViewController: UITableViewController {
         
         let action = UIAlertAction(title: "추가", style: .default) { (action) in
 //            what will happen once the user clicks the Add Item button on UIAlert
-            
-           
            
             let newItem = Item(context: self.context)
             newItem.title = textField.text!
@@ -85,7 +89,6 @@ class GlassSlipperViewController: UITableViewController {
             self.itemArray.append(newItem)
             
             self.saveItems()
-            
       
         }
         
@@ -94,28 +97,29 @@ class GlassSlipperViewController: UITableViewController {
             textField = alerttextField
         }
         
-        
         alert.addAction(action)
         
         present(alert, animated: true, completion: nil)
         
     }
     
+    
 //    Mark - Model Manupulation Methods
     
     func saveItems() {
-        
+
+//        create, update, delete in CRUD
         do {
             try context.save()
         } catch {
             print("Error saving context \(error)")
             
         }
-        
         self.tableView.reloadData()
         
     }
     
+//    read in CRUD
     func loadItems() {
         let request : NSFetchRequest<Item> = Item.fetchRequest()
         do {
