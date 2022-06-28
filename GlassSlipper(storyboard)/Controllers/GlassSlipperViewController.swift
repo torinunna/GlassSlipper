@@ -12,15 +12,15 @@ class GlassSlipperViewController: UITableViewController {
     
     var itemArray = [Item]()
     
-    let dataFilePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask).first?.appendingPathComponent("Items.plist")
-    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
        
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
         
+        loadItems()
         
     }
     
@@ -29,6 +29,7 @@ class GlassSlipperViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
+        
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -115,16 +116,14 @@ class GlassSlipperViewController: UITableViewController {
         
     }
     
-//    func loadItems() {
-////        if let data = try? Data(contentsOf: dataFilePath!) {
-////            let decoder = PropertyListDecoder()
-////            do {
-////            itemArray = try decoder.decode([Item].self, from: data)
-////            } catch {
-////                print("Error decoding itme array, \(error)")
-////            }
-////        }
-//    }
+    func loadItems() {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        do {
+            itemArray = try context.fetch(request)
+        } catch {
+            print("Error fetching data from context \(error)")
+        }
+    }
     
 }
 
