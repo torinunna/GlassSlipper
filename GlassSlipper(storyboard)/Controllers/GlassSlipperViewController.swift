@@ -24,7 +24,7 @@ class GlassSlipperViewController: UITableViewController {
     }
     
     
-//    Mark - TableView Datasource Methods
+//    MARK: - TableView Datasource Methods
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return itemArray.count
@@ -52,18 +52,18 @@ class GlassSlipperViewController: UITableViewController {
     }
     
     
-//    Mark - TableView Delegate Methods
+//    MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//
+//        //        remove the data from permanent stores
+//        context.delete(itemArray[indexPath.row])
+//        //        remove the current item from the itemArray
+//        itemArray.remove(at: indexPath.row)
+//
+//
         
-        //        remove the data from permanent stores
-        context.delete(itemArray[indexPath.row])
-        //        remove the current item from the itemArray
-        itemArray.remove(at: indexPath.row)
-
-        
-        
-//        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
+        itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         saveItems()
         
@@ -71,7 +71,7 @@ class GlassSlipperViewController: UITableViewController {
     }
     
     
-//    Mark - Add New Items
+//    MARK: - Add New Items
     
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
@@ -104,7 +104,7 @@ class GlassSlipperViewController: UITableViewController {
     }
     
     
-//    Mark - Model Manupulation Methods
+//    MARK: - Model Manupulation Methods
     
     func saveItems() {
 
@@ -118,16 +118,35 @@ class GlassSlipperViewController: UITableViewController {
         self.tableView.reloadData()
         
     }
+   
     
 //    read in CRUD
-    func loadItems() {
-        let request : NSFetchRequest<Item> = Item.fetchRequest()
+    func loadItems(with request: NSFetchRequest<Item> = Item.fetchRequest()) {
+        
         do {
             itemArray = try context.fetch(request)
         } catch {
             print("Error fetching data from context \(error)")
         }
+        
+        tableView.reloadData()
     }
     
 }
 
+
+//MARK: - Search Bar Methods
+
+extension GlassSlipperViewController: UISearchBarDelegate {
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let request : NSFetchRequest<Item> = Item.fetchRequest()
+        
+        request.predicate = NSPredicate(format: "title CONTAINS[cd] %@", searchBar.text!)
+        
+        request.sortDescriptors = [NSSortDescriptor(key: "title", ascending: true)]
+    
+        loadItems(with: request)
+        
+    }
+}
