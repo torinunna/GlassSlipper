@@ -30,8 +30,6 @@ class CategoryViewController: UITableViewController {
         
         let category = categoryArray[indexPath.row]
         
-        return cell
-        
         var content = cell.defaultContentConfiguration()
         
         content.text = category.name
@@ -80,6 +78,10 @@ class CategoryViewController: UITableViewController {
     }
     
 //    MARK: - TableView Delegate Methods
+    
+    override func performSegue(withIdentifier identifier: String, sender: Any?) {
+        
+    }
     
     
     
