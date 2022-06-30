@@ -66,6 +66,15 @@ class CategoryViewController: UITableViewController {
             self.categoryArray.append(newCategory)
       
         }
+        
+        alert.addTextField { (alerttextField) in
+            alerttextField.placeholder = "새로운 리스트"
+            textField = alerttextField
+        }
+        
+        alert.addAction(action)
+        
+        present(alert, animated: true, completion: nil)
     
     
     }
