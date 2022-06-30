@@ -7,16 +7,16 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--List-->
         <scene sceneID="XKt-oy-3BG">
             <objects>
-                <tableViewController id="mBn-U6-Hkw" sceneMemberID="viewController">
+                <tableViewController id="mBn-U6-Hkw" customClass="CategoryViewController" customModule="GlassSlipper_storyboard_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="O8N-au-2ba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="Htf-de-qZI">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CategoryCell" id="Htf-de-qZI">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Htf-de-qZI" id="mvE-F7-x9b">
@@ -30,7 +30,14 @@
                             <outlet property="delegate" destination="mBn-U6-Hkw" id="M2a-rv-XEF"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="qcO-Ck-o8u"/>
+                    <navigationItem key="navigationItem" title="List" id="qcO-Ck-o8u">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="obG-ng-zwb">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="mBn-U6-Hkw" id="ars-mF-QQ9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="SJq-11-F9f" kind="show" identifier="goToItems" id="7F4-VY-gJG"/>
                     </connections>
@@ -39,7 +46,7 @@
             </objects>
             <point key="canvasLocation" x="932" y="63"/>
         </scene>
-        <!--유리구두-->
+        <!--체크리스트-->
         <scene sceneID="wov-Bu-Oji">
             <objects>
                 <tableViewController id="SJq-11-F9f" customClass="GlassSlipperViewController" customModule="GlassSlipper_storyboard_" customModuleProvider="target" sceneMemberID="viewController">
@@ -70,7 +77,7 @@
                             <outlet property="delegate" destination="SJq-11-F9f" id="q1U-4i-5v9"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="유리구두" id="bxO-pN-di4">
+                    <navigationItem key="navigationItem" title="체크리스트" id="bxO-pN-di4">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="StK-1J-1WB">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>
