@@ -14,6 +14,7 @@
 		5F2813562864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F2813542864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld */; };
 		5F2813582864C1D200EF5A7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2813572864C1D200EF5A7F /* Assets.xcassets */; };
 		5F28135B2864C1D200EF5A7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2813592864C1D200EF5A7F /* LaunchScreen.storyboard */; };
+		5F9F6102286DEEA900240862 /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5F9F6101286DEEA900240862 /* CategoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		5F2813572864C1D200EF5A7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F28135A2864C1D200EF5A7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F28135C2864C1D200EF5A7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5F9F6101286DEEA900240862 /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CategoryViewController.swift; path = "GlassSlipper(storyboard)/Controllers/CategoryViewController.swift"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 		5F62655F2865AC1B00D23B24 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				5F9F6101286DEEA900240862 /* CategoryViewController.swift */,
 				5F28134F2864C1CF00EF5A7F /* GlassSlipperViewController.swift */,
 			);
 			path = Controllers;
@@ -173,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F9F6102286DEEA900240862 /* CategoryViewController.swift in Sources */,
 				5F2813502864C1CF00EF5A7F /* GlassSlipperViewController.swift in Sources */,
 				5F2813562864C1CF00EF5A7F /* GlassSlipper_storyboard_.xcdatamodeld in Sources */,
 				5F28134C2864C1CF00EF5A7F /* AppDelegate.swift in Sources */,
