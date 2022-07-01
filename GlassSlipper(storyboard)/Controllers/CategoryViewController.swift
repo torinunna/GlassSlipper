@@ -10,7 +10,7 @@ import CoreData
 
 class CategoryViewController: UITableViewController {
     
-    var categoryArray = [Category]()
+    var categories = [Category]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,13 +22,13 @@ class CategoryViewController: UITableViewController {
 //    MARK: - TableView Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return categoryArray.count
+        return categories.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
-        let category = categoryArray[indexPath.row]
+        let category = categories[indexPath.row]
         
         var content = cell.defaultContentConfiguration()
         
@@ -61,7 +61,7 @@ class CategoryViewController: UITableViewController {
             let newCategory = Category()
             newCategory.name = textField.text!
             
-            self.categoryArray.append(newCategory)
+            self.categories.append(newCategory)
       
         }
         
