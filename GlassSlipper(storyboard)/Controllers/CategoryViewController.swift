@@ -11,11 +11,13 @@ import CoreData
 class CategoryViewController: UITableViewController {
     
     var categories = [Category]()
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        loadCateogories()
         
     }
     
@@ -43,6 +45,31 @@ class CategoryViewController: UITableViewController {
     
 //    MARK: - Data Manupulation Methods
     
+    func saveCategories() {
+        
+        do {
+            try context.save()
+        } catch {
+            print("Error saving categories \(error)")
+        }
+        
+        tableView.reloadData()
+        
+    }
+
+    func loadCateogories() {
+        
+        let request : NSFetchRequest<Category> = Category.fetchRequest()
+        
+        do {
+           categories = try context.fetch(request)
+        } catch {
+            print("Error loading categories \(error)")
+        }
+        
+        tableView.reloadData()
+    }
+    
     
     
     
@@ -58,10 +85,12 @@ class CategoryViewController: UITableViewController {
         let action = UIAlertAction(title: "추가", style: .default) { (action) in
 //            what will happen once the user clicks the Add Item button on UIAlert
            
-            let newCategory = Category()
+            let newCategory = Category(context: self.context)
             newCategory.name = textField.text!
             
             self.categories.append(newCategory)
+            
+            self.saveCategories()
       
         }
         
