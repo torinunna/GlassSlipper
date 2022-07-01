@@ -65,13 +65,13 @@ class CategoryViewController: UITableViewController {
       
         }
         
-        alert.addTextField { (alerttextField) in
-            alerttextField.placeholder = "새로운 리스트"
-            textField = alerttextField
-        }
-        
         alert.addAction(action)
         
+        alert.addTextField { (field) in
+            textField = field
+            textField.placeholder = "새로운 리스트"
+        }
+
         present(alert, animated: true, completion: nil)
     
     

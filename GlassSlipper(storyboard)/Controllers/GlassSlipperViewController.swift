@@ -92,12 +92,12 @@ class GlassSlipperViewController: UITableViewController {
       
         }
         
-        alert.addTextField { (alerttextField) in
-            alerttextField.placeholder = "새로운 아이템"
-            textField = alerttextField
-        }
-        
         alert.addAction(action)
+        
+        alert.addTextField { (alerttextField) in
+            textField = alerttextField
+            alerttextField.placeholder = "새로운 아이템"
+        }
         
         present(alert, animated: true, completion: nil)
         
