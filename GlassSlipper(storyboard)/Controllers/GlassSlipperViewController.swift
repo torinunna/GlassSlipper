@@ -59,14 +59,7 @@ class GlassSlipperViewController: UITableViewController {
 //    MARK: - TableView Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//        //        remove the data from permanent stores
-//        context.delete(itemArray[indexPath.row])
-//        //        remove the current item from the itemArray
-//        itemArray.remove(at: indexPath.row)
-//
-//
-        
+
         itemArray[indexPath.row].done = !itemArray[indexPath.row].done
         
         saveItems()
@@ -106,6 +99,24 @@ class GlassSlipperViewController: UITableViewController {
         
         present(alert, animated: true, completion: nil)
         
+    }
+    
+// MARK: - Delete Items
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
+        if editingStyle == .delete {
+//        remove the data from permanent stores
+            context.delete(itemArray[indexPath.row])
+            
+//        remove the current item from the itemArray
+            itemArray.remove(at: indexPath.row)
+            
+//            remove the row from the tableView
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        } 
+        
+        saveItems()
     }
     
     
