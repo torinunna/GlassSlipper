@@ -24,9 +24,17 @@ class CategoryViewController: UITableViewController {
 //    MARK: - TableView Datasource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if categories.count == 0 {
+            tableView.setEmptyView(title: "아직 리스트가 없어요.", message: "+를 눌러 리스트를 추가해주세요")
+        } else {
+            tableView.restore()
+            return categories.count
+        }
         return categories.count
     }
-    
+
+
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
@@ -123,6 +131,7 @@ class CategoryViewController: UITableViewController {
 //    MARK: - Delete Categories
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        
         if editingStyle == .delete {
             context.delete(categories[indexPath.row])
             categories.remove(at: indexPath.row)
@@ -132,4 +141,38 @@ class CategoryViewController: UITableViewController {
         saveCategories()
     }
 
+}
+
+extension UITableView {
+
+    func setEmptyView(title: String, message: String) {
+        
+        let emptyView = UIView(frame: CGRect(x: self.center.x, y: self.center.y, width: self.bounds.size.width, height: self.bounds.size.height))
+        
+        let titleLabel = UILabel()
+        let messageLabel = UILabel()
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        messageLabel.translatesAutoresizingMaskIntoConstraints = false
+        titleLabel.textColor = UIColor.black
+        messageLabel.textColor = UIColor.lightGray
+        
+        emptyView.addSubview(titleLabel)
+        emptyView.addSubview(messageLabel)
+        
+        titleLabel.centerYAnchor.constraint(equalTo: emptyView.centerYAnchor).isActive = true
+        titleLabel.centerXAnchor.constraint(equalTo: emptyView.centerXAnchor).isActive = true
+        messageLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 20).isActive = true
+        messageLabel.leftAnchor.constraint(equalTo: emptyView.leftAnchor, constant: 20).isActive = true
+        messageLabel.rightAnchor.constraint(equalTo: emptyView.rightAnchor, constant: -20).isActive = true
+        titleLabel.text = title
+        messageLabel.text = message
+        messageLabel.numberOfLines = 0
+        messageLabel.textAlignment = .center
+        self.backgroundView = emptyView
+        self.separatorStyle = .none
+    }
+    
+    func restore() {
+        self.backgroundView = nil
+    }
 }
