@@ -10,7 +10,7 @@
         <!--List-->
         <scene sceneID="XKt-oy-3BG">
             <objects>
-                <tableViewController id="mBn-U6-Hkw" customClass="CategoryViewController" customModule="GlassSlipper_storyboard_" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CategoryViewController" id="mBn-U6-Hkw" customClass="CategoryViewController" customModule="GlassSlipper_storyboard_" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="O8N-au-2ba">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,6 +78,12 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="체크리스트" id="bxO-pN-di4">
+                        <barButtonItem key="leftBarButtonItem" systemItem="organize" id="ohs-14-FCf">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="backButtonPressed:" destination="SJq-11-F9f" id="UNg-nF-H5t"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="StK-1J-1WB">
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <connections>

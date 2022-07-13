@@ -27,6 +27,10 @@ class GlassSlipperViewController: UITableViewController {
         
     }
     
+    @IBAction func backButtonPressed(_ sender: Any) {
+        
+        self.navigationController?.popViewController(animated: true)
+    }
     
 //    MARK: - TableView Datasource Methods
 
