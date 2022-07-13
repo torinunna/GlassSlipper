@@ -4,7 +4,7 @@ Local Data Persistance using UserDefualts and Core Data
 - Subclass a UITableViewController
 - TableView Delegate Methods and Accessories
 - Textfield Inside UIAlert to Add New Items
-- Persist Local Data Storage using UserDefualts
+- Persist Local Data Storage using UserDefaults
 - Custom Data Model
 - Swift Ternary Operator
 - Restruct App with MVC
